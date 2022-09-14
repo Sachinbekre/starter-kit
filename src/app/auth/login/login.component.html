@@ -1,0 +1,55 @@
+<div class="auth-main" style="background-color: #fff">
+    <div class="auth-block">
+        <div class="card">
+            <div class="text-center">
+                <!-- <img src="assets/images/nic_prov.svg" width="auto" height="45" /> -->
+                <!-- <img src="assets/images/examroom_logo.svg" width="auto" height="45" /> -->
+            </div>
+            <div class="text-center my-3 text-center">
+                <h4 class="font-weight-bold">Sign In</h4>
+            </div>
+            <form [formGroup]="loginForm">
+                <div class="form-group mb-3">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label style="font-size: 16px">Username *</mat-label>
+                        <input matInput type="text" formControlName="username" placeholder="Enter your Username"
+                            autofocus />
+                        <mat-error *ngIf="checkError('username', 'required')">Username is required.</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group mb-4">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label style="font-size: 16px">Password *</mat-label>
+                        <input matInput type="password" formControlName="password" placeholder="Enter your password" />
+                        <mat-error *ngIf="checkError('password', 'required')">Password is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div >
+                    <div class="form-group">
+                        <button id="sign_in" type="submit" class="btn btn-primary btn-block"
+                            (click)="onSubmit(loginForm.value)">
+                            Sign in
+                        </button>
+                    </div>
+                    <div class="auth-sep">
+                        <span>
+                            <span>Or continue with more</span>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button class="btn btn-default btn-sm float-left" >
+                                Forgot password?
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- <button type="button" routerLink="/register" class="btn btn-default btn-sm float-right">
+                  Register
+                </button> -->
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
